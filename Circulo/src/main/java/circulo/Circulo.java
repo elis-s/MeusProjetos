@@ -27,7 +27,7 @@ public class Circulo {
         
         System.out.println("Digite o raio: ");
         double raio = teclado.nextDouble();
-        
+        //Math.PI - é para usar a constante de pi de maneira mais precisa
         double diametro = 2 * raio;
         double circ = 2 * Math.PI * raio;
         double area = Math.PI * raio * 2;
