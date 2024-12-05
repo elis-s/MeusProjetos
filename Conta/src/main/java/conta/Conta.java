@@ -30,8 +30,8 @@ Caso o valor de depósito informado seja menor ou igual a 0.0, o programa não d
 public class Conta {
 
     //Atributos
-    public String nome;
-    public double saldo;
+    private String nome;
+    private double saldo;
     
     public Conta (String nome, double saldo){
         
