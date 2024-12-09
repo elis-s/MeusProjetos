@@ -26,6 +26,11 @@ Métodos setName e getName para modificar e acessar o nome do titular da conta, 
 Requisitos Adicionais:
 
 Caso o valor de depósito informado seja menor ou igual a 0.0, o programa não deve realizar a operação e deve manter o saldo da conta inalterado.
+
+Modifique a classe Account para fornecer um método chamado withdraw que retira dinheiro de uma Account. 
+Assegure que o valor de débito não exceda o saldo de Account. Se exceder, o saldo deve ser deixado inalterado
+e o método deve imprimir uma mensagem que indica "Withdrawal amount exceeded account balance" [Valor de débito
+excedeu o saldo da conta]. Modifique a classe AccountTest (Figura 3.9) para testar o método withdraw.
  */
 public class Conta {
 
@@ -43,6 +48,16 @@ public class Conta {
         }
                 
     }   
+    
+    public void sacar (double sacarRetirar){
+        
+        if(sacarRetirar > saldo){
+            System.out.println("O valor de saque excedeu o valor da conta (saldo negativo)");
+        }else{
+            saldo = saldo -= sacarRetirar;
+        }
+        
+    }
     
     public void deposito (double depositoAdicionado){
         
