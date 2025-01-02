@@ -75,7 +75,7 @@ public class FrequenciaCardiaca {
     }
     
     public int idade(){
-        return 2024 - dataAno;
+        return 2025 - dataAno;
     }
     
     public int fcMax(){
