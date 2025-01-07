@@ -22,8 +22,6 @@ public class Quilometro {
         
         int viagensTotal = 0;
         int viagens = 1;
-        int km = 0;
-        int L = 0;
         int totalKm = 0;
         int totalL = 0;
         
@@ -32,9 +30,9 @@ public class Quilometro {
         
         while(viagens <= viagensTotal){
             System.out.println("Informe quantos km: ");
-            km = teclado.nextInt();
+            int  km = teclado.nextInt();
             System.out.println("Informe quantos L: ");
-            L = teclado.nextInt();
+            int L = teclado.nextInt();
             totalKm = totalKm + km;
             totalL = totalL + L;
             viagens++;
