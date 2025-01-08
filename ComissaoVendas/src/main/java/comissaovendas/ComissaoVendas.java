@@ -41,7 +41,7 @@ public class ComissaoVendas {
         }
         
         System.out.println("Total em produtos vendidos " + total);
-        double varRecebido = 200 + (total * 9 / 100);
+        double varRecebido = 200 + (total * 9.0 / 100.0);
         System.out.println("Valor recebido " + varRecebido);
 
     }
