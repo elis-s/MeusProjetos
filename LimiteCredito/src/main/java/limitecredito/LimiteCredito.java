@@ -38,6 +38,7 @@ public class LimiteCredito {
         
         int novoSaldo = saldoInicial - (cobrancas + credito);
         
+        System.out.println("Conta: " + conta);
         System.out.println("O novo saldo é " + novoSaldo);
         
         if(novoSaldo > limite){
