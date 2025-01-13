@@ -46,9 +46,12 @@ public class NotasSwitch {
                case 7: 
                    System.out.println("NOTA D!");
                    break;
-               case 6, 5, 4, 3, 2, 1, 0:
+               case 6, 5, 4, 3, 2, 1:
                    System.out.println("NOTA F!");
                    break;
+                   
+               default: 
+                   System.out.println("INVÁLIDO! ");
            }
            
           
