@@ -6,50 +6,74 @@ package conta;
 
 import java.util.Scanner;
 
-/*Classe AccountTest:
-A classe AccountTest deve criar dois objetos do tipo Account e demonstrar as funcionalidades da classe Account. Inicialmente, deve ser exibido o saldo de cada conta.
-Em seguida, deve ser solicitado ao usuário um valor para depósito em cada uma das contas. Após os depósitos, o saldo de cada conta deve ser exibido novamente.
-Requisitos Adicionais:
-
-Caso o valor de depósito informado seja menor ou igual a 0.0, o programa não deve realizar a operação e deve manter o saldo da conta inalterado.
+/*Implemente uma classe chamada Conta que tenha por atributos o número da conta, o
+nome do correntista e o saldo. Deve ser criada uma aplicação que instancie um objeto
+da classe Conta e ofereça um menu com as opções saque, depósito, consulta de saldo
+e sair da aplicação. A aplicação deve realizar as operações que o usuário desejar até
+que ele peça para sair do programa.
  */
 public class Principal {
 
+    
     public static void main(String[] args) {
 
         Scanner teclado = new Scanner(System.in);
+
+        int escolha = 0;
+        double novoSaldo = 0;
+
         
-        //o objeto não pode ser inicializado vazio nesse caso, pq teoricamente as contas eu já tenho
-        Conta conta1 = new Conta("Elislania " , 500000);
-        Conta conta2 = new Conta("Soelania " , 100000);
+        System.out.println("Nome: ");
+        String nome = teclado.nextLine();
         
-        //exibindo os saldos das contas
-        System.out.println("Saldo da conta 1: " + conta1.getNome() + conta1.getSaldo());
-        System.out.println("Saldo da conta 2: " + conta2.getNome() + conta2.getSaldo());
+        System.out.println("Numero da conta: ");
+        int numeroConta = teclado.nextInt();
+        teclado.nextLine();
         
-        //depositos
-        System.out.println("Informe o valor de deposito da conta 1: ");
-        //a variavel para adicionar o dinheiro jás estava criada na classe Conta para o metodo de deposito, se eu criasse outra aqui daria erro e esse vai ter a declaração do tipo double
-        //a da conta 2 nao vai ter pq já foi refernciado aqui ou vai dar erro 
-        double depositoAdicionado = teclado.nextDouble();
-        conta1.deposito(depositoAdicionado);
+        System.out.println("Saldo da conta: ");
+        double saldo = teclado.nextDouble();
+        teclado.nextLine();
         
-        System.out.println("Informe o valor de deposito da conta 2: ");
-        depositoAdicionado = teclado.nextDouble();
-        conta2.deposito(depositoAdicionado);
+     
+        Conta conta = new Conta(numeroConta, nome, saldo);
         
-        //saques
-        System.out.println("Informe o valor que gostaria de retirar da conta 1: ");
-        double sacarRetirar = teclado.nextDouble();
-        conta1.sacar(sacarRetirar);
         
-        System.out.println("Informe o valor que gostaria de sacar da conta 2: ");
-        sacarRetirar = teclado.nextDouble();
-        conta1.sacar(sacarRetirar);
+        while(escolha != 4){
+             System.out.println("(1) DEPOSITO"
+                + "(2) CONSULTAR SALDO"
+                + "(3) SAQUE"
+                + "(4) SAIR");
+        escolha = teclado.nextInt();
         
-        //saldo atual
-        System.out.println("O saldo atual da conta 1 é de " + conta1.getNome() + conta1.getSaldo());
-        System.out.println("O saldo atual da conta 2 é de " + conta2.getNome() + conta2.getSaldo());
+        switch(escolha){
+            case 1:
+                System.out.println("Qual o valor do deposito? ");
+                double deposito = teclado.nextDouble();
+                novoSaldo = conta.deposito(deposito);
+                System.out.println(conta.toString() + " SALDO " + novoSaldo);
+                break;
+                
+            case 2: 
+                System.out.println(conta.toString() + " " + novoSaldo);
+                break;
+                
+            case 3: 
+                System.out.println("Qual o valor do saque? ");
+                double saque = teclado.nextDouble();
+                novoSaldo = conta.saque(saque);
+                System.out.println(conta.toString() + " SALDO " + novoSaldo);
+                break;
+                
+            default:
+                System.out.println("ENCERRADO!");
+                
+        }
+        
+        
+        }
+         
+        
+        
         
 
     }
